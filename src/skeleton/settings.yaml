@@ -1,0 +1,34 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/settings/
+title: byt-网址导航
+language: zh-CN
+# background:
+#   image: https://images.unsplash.com/photo-1502790671504-542ad42d5189?auto=format&fit=crop&w=2560&q=80
+hideErrors: true
+bookmarksStyle: icons
+providers:
+  openweathermap: f5f08f29345fc1ff9bee5b40cdf8fc24
+logpath: /
+layout:
+  小组件:
+    style: row
+    columns: 3
+  Vue:
+    style: row
+    columns: 3
+  React:
+    style: row
+    columns: 2
+  Node:
+    style: row
+    columns: 3
+  Svelte:
+    style: column
+    columns: 1
+  Astro:
+    style: column
+    columns: 1
+  个人作品:
+    style: row
+    columns: 4

@@ -1,0 +1,80 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services/
+- 小组件:
+    - 日程:
+        widget:
+            type: calendar
+    - 日程2:
+        widget:
+            type: calendar
+    - 日程3:
+        widget:
+            type: calendar
+- Vue:
+    - Vue2.x开发指南:
+        icon: https://v2.cn.vuejs.org/images/logo.svg
+        href: https://v2.cn.vuejs.org/
+        description: 渐进式 JavaScript 框架
+        ping: v2.cn.vuejs.org
+    - Vue3.x开发指南:
+        icon: http://cn.vuejs.org/logo.svg
+        href: http://cn.vuejs.org/
+        description: 适用场景丰富的 Web 前端框架。
+        ping: cn.vuejs.org
+    - Nuxt开发指南:
+        icon: https://nuxt.com/icon.png
+        href: https://nuxt.com/
+        description: 这是一个用于 生产环境的 Vue 框架。
+        ping: nuxt.com
+- React:
+    - React开发指南:
+        icon: https://zh-hans.react.dev/favicon-32x32.png
+        href: https://zh-hans.react.dev/
+        description: 用于构建 Web 和原生交互界面的库
+        ping: zh-hans.react.dev
+    - Next开发指南:
+        icon: https://www.nextjs.cn/static/favicon/favicon-32x32.png
+        href: https://www.nextjs.cn/
+        description: 这是一个用于 生产环境的 React 框架。
+        ping: nextjs.cn
+- Node:
+    - Node开发指南:
+        icon: https://nodejs.cn/static/images/favicons/favicon.png
+        href: https://nodejs.cn/en/learn
+        description: Node.js 是一个开源和跨平台的 JavaScript 运行时环境。
+        ping: nodejs.cn
+    - Nest开发指南:
+        icon: https://nest.nodejs.cn/favicon.ico
+        href: https://nest.nodejs.cn/
+        description: Nest (NestJS) 是一个用于构建高效、可扩展的 Node.js 服务器端应用的框架。
+        ping: nest.nodejs.cn
+
+- Svelte:
+    - svelte开发指南:
+        icon: https://svelte.yayujs.com/favicon.png
+        href: https://svelte.yayujs.com/
+        description: Svelte 是一个用于构建 web 用户界面的框架。
+        ping: svelte.yayujs.com
+- Astro:
+    - Astro开发指南:
+        icon: https://docs.astro.build/favicon.ico
+        href: https://docs.astro.build/zh-cn/getting-started/
+        description: Astro 是集成 Vue、React、Svelte 等 Web 的框架。
+        ping: docs.astro.build
+- 个人作品:
+    - 每日手记:
+        icon:  https://boycot.top/favicon.svg
+        href:  https://boycot.top
+        description: 每日手记
+        ping: boycot.top
+    - web-os:
+        icon: https://os.boycot.top/favicon.png
+        href: https://os.boycot.top
+        description: powered by sevltejs
+        ping: os.boycot.top
+    - 影视: 
+        icon: http://movie.boycot.top/template/mxone/mxstatic/picture/logo.png
+        href: http://movie.boycot.top/
+        description: 免费影视大全
+        ping: movie.boycot.top
