@@ -93,8 +93,8 @@ importers:
         specifier: ^5.1.2
         version: 5.1.2
       urbackup-server-api:
-        specifier: ^0.8.9
-        version: 0.8.9
+        specifier: ^0.60.1
+        version: 0.60.1
       winston:
         specifier: ^3.17.0
         version: 3.17.0
@@ -791,8 +791,8 @@ packages:
     resolution: {integrity: sha512-hsU18Ae8CDTR6Kgu9DYf0EbCr/a5iGL0rytQDobUcdpYOKokk8LEjVphnXkDkgpi0wYVsqrXuP0bZxJaTqdgoA==}
     engines: {node: '>= 0.4'}
 
-  async-mutex@0.3.2:
-    resolution: {integrity: sha512-HuTK7E7MT7jZEh1P9GtRW9+aTWiDWWi9InbZ5hjxrnRa39KS4BW04+xLBhYNS2aXhHUIKZSw3gj4Pn1pj+qGAA==}
+  async-mutex@0.5.0:
+    resolution: {integrity: sha512-1A94B18jkJ3DYq284ohPxoXbfTA5HsQ7/Mf4DEhcyLx3Bz27Rh59iScbB6EPiP+B+joue6YCxcMXSbFC1tZKwA==}
 
   async@3.2.6:
     resolution: {integrity: sha512-htCUDlxyyCLMgaM3xXg0C0LW2xqfuQ6p05pCEIsXuyQ+a1koYKTuBMzRNwmybfLgvJDMd0r1LTn4+E0Ti6C2AA==}
@@ -2645,8 +2645,8 @@ packages:
     resolution: {integrity: sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==}
     engines: {node: '>= 0.8'}
 
-  urbackup-server-api@0.8.9:
-    resolution: {integrity: sha512-Igu6A0xSZeMsiN6PWT7zG4aD+iJR5fXT/j5+xwAvnD/vCNfvVrettIsXv6MftxOajvTmtlgaYu8KDoH1EJQ6DQ==}
+  urbackup-server-api@0.60.1:
+    resolution: {integrity: sha512-q9iccmqSBnyAJQ9us4Eoyhq7Rc4rVMpQErE0OWKkRhGLsgrC5mVDXWE+GzdGLej3tmxUXI3WPDER7dY70Bk36A==}
 
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
@@ -3392,7 +3392,7 @@ snapshots:
 
   async-function@1.0.0: {}
 
-  async-mutex@0.3.2:
+  async-mutex@0.5.0:
     dependencies:
       tslib: 2.8.1
 
@@ -5482,9 +5482,9 @@ snapshots:
 
   unpipe@1.0.0: {}
 
-  urbackup-server-api@0.8.9:
+  urbackup-server-api@0.60.1:
     dependencies:
-      async-mutex: 0.3.2
+      async-mutex: 0.5.0
       node-fetch: 2.7.0
     transitivePeerDependencies:
       - encoding
