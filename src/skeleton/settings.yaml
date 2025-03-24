@@ -9,7 +9,6 @@ hideErrors: true
 bookmarksStyle: icons
 providers:
   openweathermap: f5f08f29345fc1ff9bee5b40cdf8fc24
-logpath: /
 layout:
   小组件:
     style: row
