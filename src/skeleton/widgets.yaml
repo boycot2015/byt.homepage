@@ -1,14 +1,15 @@
 ---
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/info-widgets/
-- greeting:
-    text_size: xl
-    text: byt-nav
-- resources:
-    cpu: true
-    memory: true
-    disk: /
-
+- logo:
+    icon: /mstile-70x70.png
+# - greeting:
+#     text_size: xl
+#     text: byt-nav
+# - resources:
+#     cpu: true
+#     memory: true
+#     disk: /
 - search:
     provider: bing
     target: _blank
@@ -23,8 +24,8 @@
       maximumFractionDigits: 0
 - datetime:
     locale: zh-CN
-    text_size: 3xl
+    text_size: 4xl
     format:
-        # dateStyle: short
+        dateStyle: short
         timeStyle: short
         hour12: true

@@ -2,13 +2,55 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/services/
 - 小组件:
+    - 今日头条:
+        widget:
+            type: customapi
+            url: https://api.boycot.top/api/hots?name=toutiao
+            method: GET
+            display: dynamic-list
+            mappings:
+                items: data
+                name: title
+                label: hot
+                target: https://www.toutiao.com/trending/{id}
+                limit: 5
+    - 百度:
+        widget:
+            type: customapi
+            url: https://api.boycot.top/api/hots?name=baidu
+            method: GET
+            display: dynamic-list
+            mappings:
+                items: data
+                name: title
+                label: hot
+                target: https://www.baidu.com/s?{id}
+                limit: 5
+    - 知乎:
+        widget:
+            type: customapi
+            url: https://api.boycot.top/api/hots?name=zhihu
+            method: GET
+            display: dynamic-list
+            mappings:
+                items: data
+                name: title
+                label: hot
+                target: https://www.zhihu.com/question/{id}.thml
+                limit: 3
+    - 网易:
+        widget:
+            type: customapi
+            url: https://api.boycot.top/api/hots?name=netease
+            method: GET
+            display: dynamic-list
+            mappings:
+                items: data
+                name: title
+                label: hot
+                target: https://www.163.com/dy/article/{id}
+                limit: 5
     - 日程:
-        widget:
-            type: calendar
-    - 日程2:
-        widget:
-            type: calendar
-    - 日程3:
         widget:
             type: calendar
 - Vue:
@@ -71,7 +113,7 @@
     - web-os:
         icon: https://os.boycot.top/favicon.png
         href: https://os.boycot.top
-        description: powered by sevltejs
+        description: powered by svelte
         ping: os.boycot.top
     - 影视: 
         icon: http://movie.boycot.top/template/mxone/mxstatic/picture/logo.png
