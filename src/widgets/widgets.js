@@ -60,6 +60,7 @@ import mailcow from "./mailcow/widget";
 import mastodon from "./mastodon/widget";
 import mealie from "./mealie/widget";
 import medusa from "./medusa/widget";
+import metingjs from "./metingjs/widget";
 import minecraft from "./minecraft/widget";
 import miniflux from "./miniflux/widget";
 import mikrotik from "./mikrotik/widget";
@@ -199,6 +200,7 @@ const widgets = {
   mastodon,
   mealie,
   medusa,
+  metingjs,
   minecraft,
   miniflux,
   mikrotik,

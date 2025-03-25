@@ -390,6 +390,10 @@ export function cleanServiceGroups(groups) {
 
           // spoolman
           spoolIds,
+          // metingjs
+          playType,
+          playServer,
+          playId,
         } = widgetData;
 
         let fieldsList = fields;
@@ -510,6 +514,11 @@ export function cleanServiceGroups(groups) {
           if (mappings) widget.mappings = mappings;
           if (display) widget.display = display;
           if (refreshInterval) widget.refreshInterval = refreshInterval;
+        }
+        if (type === "metingjs") {
+          if (playServer) widget.playServer = playServer;
+          if (playType) widget.playType = playType;
+          if (playId) widget.playId = playId;
         }
         if (type === "calendar") {
           if (integrations) widget.integrations = integrations;

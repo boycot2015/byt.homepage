@@ -247,7 +247,7 @@ export default function Component({ service }) {
                 const itemLabel = shvl.get(item, label, "");
                 const itemUrl = target ? target.replace(/\{([^}]+)\}/g, (_, key) => item[key] || "") : null;
                 const className =
-                  "bg-theme-200/50 dark:bg-theme-900/20 rounded-sm m-1 flex-1 flex flex-row items-center justify-between p-1 text-xs";
+                  "bg-theme-200/50 dark:bg-theme-900/20 rounded-sm m-1 flex-1 flex flex-row items-center justify-between p-2 text-xs";
 
                 return itemUrl ? (
                   <a
@@ -257,17 +257,17 @@ export default function Component({ service }) {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <div className="font-thin pl-2">{itemName}</div>
-                    <div className="flex flex-row text-right">
-                      <div className="font-bold mr-2">{itemLabel}</div>
+                    <div className="flex flex-row">
+                      <div className="font-bold">{itemLabel}</div>
                     </div>
+                    <div className="font-thin text-right">{itemName}</div>
                   </a>
                 ) : (
                   <div key={`${itemName}-${index}`} className={className}>
-                    <div className="font-thin pl-2">{itemName}</div>
-                    <div className="flex flex-row text-right">
-                      <div className="font-bold mr-2">{itemLabel}</div>
+                    <div className="flex flex-row">
+                      <div className="font-bold">{itemLabel}</div>
                     </div>
+                    <div className="font-thin text-right">{itemName}</div>
                   </div>
                 );
               })

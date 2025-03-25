@@ -26,7 +26,7 @@ import themes from "utils/styles/themes";
 import { getSettings } from "utils/config/config";
 import useWindowFocus from "utils/hooks/window-focus";
 import createLogger from "utils/logger";
-
+import Totop from "components/totop";
 const ThemeToggle = dynamic(() => import("components/toggles/theme"), {
   ssr: false,
 });
@@ -552,6 +552,7 @@ export default function Wrapper({ initialSettings, fallback }) {
         >
           <Index initialSettings={initialSettings} fallback={fallback} />
         </div>
+        <Totop />
       </div>
     </div>
   );

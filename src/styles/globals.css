@@ -66,7 +66,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 0.75em;
+  width: 0.45em;
 }
 
 dialog ::-webkit-scrollbar {
@@ -79,7 +79,7 @@ dialog ::-webkit-scrollbar {
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-thumb);
-  border-radius: 0.25em;
+  /* border-radius: 0.25em; */
 }
 
 ::-webkit-details-marker {
