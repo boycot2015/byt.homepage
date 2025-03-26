@@ -94,3 +94,6 @@ dialog ::-webkit-scrollbar {
   margin-top: 2.5rem;
   margin-bottom: .5rem;
 }
+.aplayer.aplayer-fixed .aplayer-lrc {
+  left: 84px !important;
+}

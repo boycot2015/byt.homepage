@@ -3,6 +3,7 @@
 # https://gethomepage.dev/configs/services/
 - 小组件:
     - 今日头条:
+        icon: https://sf3-cdn-tos.douyinstatic.com/obj/eden-cn/uhbfnupkbps/toutiao_favicon.ico
         widget:
             type: customapi
             url: https://api.boycot.top/api/hots?name=toutiao
@@ -13,8 +14,9 @@
                 label: title
                 name: hots
                 target: https://www.toutiao.com/trending/{id}
-                limit: 14
+                limit: 6
     - 36kr:
+        icon: https://www.36kr.com/favicon.ico
         widget:
             type: customapi
             url: https://api.boycot.top/api/hots?name=36kr
@@ -25,8 +27,9 @@
                 label: title
                 name: hots
                 target: https://www.36kr.com/p/{id}
-                limit: 9
+                limit: 5
     - 掘金:
+        icon: https://lf-web-assets.juejin.cn/obj/juejin-web/xitu_juejin_web/static/favicons/favicon-32x32.png
         widget:
             type: customapi
             url: https://api.boycot.top/api/hots?name=juejin
@@ -37,15 +40,20 @@
                 label: title
                 name: hots
                 target: https://www.juejin.cn/post/{id}
-                limit: 10
+                limit: 5
     - 日程:
+        icon: mdi-calendar-range
         widgets:
-            - type: calendar
             - type: metingjs
-              playId: 3778678
+              playId: 19723756
+              mini: true
+              fixed: true
+              playtheme: '#333'
+            - type: calendar
 
 - 影视热播:
     - 电影:
+        icon: mdi-movie
         widget:
             type: customapi
             url: http://movie.boycot.top/api.php/provide/vod/?ac=list
@@ -58,6 +66,7 @@
                 target: http://movie.boycot.top/index.php/vod/detail/id/{vod_id}.html
                 limit: 6
     - 电视剧:
+        icon: mdi-television-classic
         widget:
             type: customapi
             url: http://movie.boycot.top/api.php/provide/vod/?ac=list&t=13
@@ -70,6 +79,7 @@
                 target: http://movie.boycot.top/index.php/vod/detail/id/{vod_id}.html
                 limit: 6
     - 动漫:
+        icon: mdi-star
         widget:
             type: customapi
             url: http://movie.boycot.top/api.php/provide/vod/?ac=list&t=29
@@ -81,6 +91,122 @@
                 name: vod_remarks
                 target: http://movie.boycot.top/index.php/vod/detail/id/{vod_id}.html
                 limit: 6
+
+- 数码产品:
+    - 华为:
+        icon: https://www.vmall.com/favicon.ico
+        widget:
+            type: customapi
+            url: https://api.boycot.top/api/digital?type=huawei
+            method: GET
+            display: dynamic-list
+            refreshInterval: 60000
+            mappings:
+                items: data.indexData.1.list
+                label: brief
+                name: name
+                target: https://www.vmall.com/product/comdetail/index.html?prdId={id}
+                limit: 7
+    - 小米:
+        icon: https://www.mi.com/favicon.ico
+        widget:
+            type: customapi
+            url: https://api.boycot.top/api/digital?type=xiaomi
+            method: GET
+            display: dynamic-list
+            refreshInterval: 60000
+            mappings:
+                items: data.indexData.1.list
+                label: brief
+                name: name
+                target: https://www.mi.com/shop/buy?product_id={id}
+                limit: 6
+    - 魅族:
+        icon: https://www.meizu.com/static/global/images/xjmz.ico
+        widget:
+            type: customapi
+            url: https://api.boycot.top/api/digital?type=meizu
+            method: GET
+            display: dynamic-list
+            refreshInterval: 60000
+            mappings:
+                items: data.indexData.0.list
+                label: brief
+                name: name
+                target: https://detail.meizu.com/item/{id}.html
+                limit: 6
+    - oppo:
+        icon: https://www.opposhop.cn/cn/web/favicon.ico
+        widget:
+            type: customapi
+            url: https://api.boycot.top/api/digital?type=oppo
+            method: GET
+            display: dynamic-list
+            refreshInterval: 60000
+            mappings:
+                items: data.indexData.0.list
+                label: name
+                name: price
+                target: https://www.opposhop.cn/cn/web/products/{id}.html?us=fenleiye&um=003880&ut=rengong
+                limit: 5
+    - vivo:
+        icon: https://www.vivo.com.cn/favicon.ico
+        widget:
+            type: customapi
+            url: https://api.boycot.top/api/digital?type=vivo
+            method: GET
+            display: dynamic-list
+            refreshInterval: 60000
+            mappings:
+                items: data.indexData.1.list
+                label: name
+                name: brief
+                target: https://shop.vivo.com.cn/product/{id}
+                limit: 6
+    - realme:
+        icon: https://r1.realme.net/general/20240111/170495916442937f4bc5c0fcc4109aa4107242daf9007.png
+        widget:
+            type: customapi
+            url: https://api.boycot.top/api/digital?type=realme
+            method: GET
+            display: dynamic-list
+            refreshInterval: 60000
+            mappings:
+                items: data.indexData.1.list
+                label: name
+                name: brief
+                target: https://buy.realme.com/cn/goods/{id}
+                limit: 6
+- 学习笔记:
+    - 文章:
+        icon: mdi-newspaper-variant-outline
+        widget:
+            type: customapi
+            url: https://blog-admin.boycot.top/blog-api/article
+            method: GET
+            display: dynamic-list
+            refreshInterval: 60000
+            mappings:
+                items: data.0
+                label: title
+                name: category.value
+                target: https://www.boycot.top/posts/2/{title}
+                limit: 6
+    - 笔记:
+        icon: mdi-note
+        widget:
+            type: customapi
+            url: https://blog-admin.boycot.top/blog-api/article?category=c6911c30-6971-446c-ba83-f566b6749c0d
+            method: GET
+            display: dynamic-list
+            refreshInterval: 60000
+            mappings:
+                items: data.0
+                label: title
+                name: category.value
+                target: https://www.boycot.top/posts/2/{title}
+                limit: 6
+
 - 开发指南:
     - Vue2.x开发指南:
         icon: https://v2.cn.vuejs.org/images/logo.svg
@@ -127,8 +253,10 @@
         href: https://docs.astro.build/zh-cn/getting-started/
         description: Astro 是集成 Vue、React、Svelte 等 Web 的框架。
         ping: docs.astro.build
-- 学习娱乐:
+
+- 新闻娱乐:
     - 网易:
+        icon: https://static.ws.126.net/163/f2e/common/share-icon.png
         widget:
             type: customapi
             url: https://api.boycot.top/api/hots?name=netease
@@ -137,10 +265,11 @@
             mappings:
                 items: data
                 label: title
-                name: hots
+                name: desc
                 target: https://www.163.com/dy/article/{id}.html
-                limit: 8
+                limit: 6
     - 贴吧:
+        icon: https://tb3.bdstatic.com/public/icon/favicon-v2.ico
         widget:
             type: customapi
             url: https://api.boycot.top/api/hots?name=tieba
@@ -149,10 +278,11 @@
             mappings:
                 items: data
                 label: title
-                name: hots
+                name: desc
                 target: https://tieba.baidu.com/hottopic/browse/hottopic?topic_id={id}
                 limit: 8
     - 知乎:
+        icon: https://static.zhihu.com/heifetz/favicon.ico
         widget:
             type: customapi
             url: https://api.boycot.top/api/hots?name=zhihu
@@ -164,7 +294,6 @@
                 name: hots
                 target: https://www.zhihu.com/question/{id}
                 limit: 6
-    
     
 - 个人作品:
     - 每日手记:
@@ -182,3 +311,9 @@
         href: http://movie.boycot.top/
         description: 免费影视大全
         ping: movie.boycot.top
+    - 音乐:
+        widget:
+            type: metingjs
+            playId: 3778678
+            mini: true
+            fixed: true

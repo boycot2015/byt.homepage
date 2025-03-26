@@ -488,7 +488,9 @@ function Home({ initialSettings }) {
             <Revalidate />
             {!settings.theme && <ThemeToggle />}
           </div>
-
+          <div id="copyright" className="flex w-full justify-center">
+            {settings.copyright && <p className="text-xs flex text-theme-500 dark:text-theme-400" dangerouslySetInnerHTML={{__html: settings.copyright}}></p>}
+          </div>
           <div id="version" className="flex mt-4 w-full justify-end">
             {!settings.hideVersion && <Version disableUpdateCheck={settings.disableUpdateCheck} />}
           </div>

@@ -161,7 +161,7 @@ export default function Component({ service }) {
 
   const { widget } = service;
 
-  const { mappings = [], refreshInterval = 60000, display = "block" } = widget;
+  const { mappings = [], refreshInterval = 10000, display = "block" } = widget;
   const { data: customData, error: customError } = useWidgetAPI(widget, null, {
     refreshInterval: Math.max(1000, refreshInterval),
   });
@@ -257,17 +257,17 @@ export default function Component({ service }) {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <div className="flex flex-row">
-                      <div className="font-bold">{itemLabel}</div>
+                    <div className="flex flex-row flex-3">
+                      <div className="font-bold line-clamp-2">{itemLabel}</div>
                     </div>
-                    <div className="font-thin text-right">{itemName}</div>
+                    {itemName?<div className="font-thin flex-1 text-right line-clamp-1">{itemName}</div>:null}
                   </a>
                 ) : (
                   <div key={`${itemName}-${index}`} className={className}>
-                    <div className="flex flex-row">
-                      <div className="font-bold">{itemLabel}</div>
+                    <div className="flex flex-row flex-3">
+                      <div className="font-bold line-clamp-2">{itemLabel}</div>
                     </div>
-                    <div className="font-thin text-right">{itemName}</div>
+                    {itemName?<div className="font-thin flex-1 text-right line-clamp-1">{itemName}</div>:null}
                   </div>
                 );
               })

@@ -3,6 +3,7 @@
 # https://gethomepage.dev/configs/settings/
 title: byt-网址导航
 language: zh-CN
+copyright: <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank"><img style="margin-right:5px;" title="粤ICP备18002072号" src="https://img.shields.io/badge/%E7%B2%A4ICP%E5%A4%87-18002072%E5%8F%B7-red"></a>©️2025 Powered by boycot 
 logpath: /
 # base: https://nav.boycot.top
 background:
@@ -27,10 +28,16 @@ layout:
   影视热播:
     style: row
     columns: 3
+  数码产品:
+    style: row
+    columns: 3
+  学习笔记:
+    style: row
+    columns: 2
   开发指南:
     style: row
     columns: 3
-  学习娱乐:
+  新闻娱乐:
     style: row
     columns: 3
   个人作品:

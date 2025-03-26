@@ -394,6 +394,11 @@ export function cleanServiceGroups(groups) {
           playType,
           playServer,
           playId,
+          fixed,
+          mini,
+          // playautoplay,
+          // playloop,
+          playtheme
         } = widgetData;
 
         let fieldsList = fields;
@@ -519,6 +524,9 @@ export function cleanServiceGroups(groups) {
           if (playServer) widget.playServer = playServer;
           if (playType) widget.playType = playType;
           if (playId) widget.playId = playId;
+          if (fixed) widget.fixed = fixed;
+          if (playtheme) widget.playtheme = playtheme;
+          if (mini) widget.mini = mini;
         }
         if (type === "calendar") {
           if (integrations) widget.integrations = integrations;
