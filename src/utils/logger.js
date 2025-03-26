@@ -50,7 +50,7 @@ function getConsoleLogger() {
 function getFileLogger() {
   const settings = getSettings();
   const logpath = settings.logpath || CONF_DIR;
-
+  
   return new winston.transports.File({
     format: winston.format.combine(
       winston.format.errors({ stack: true }),
@@ -58,7 +58,7 @@ function getFileLogger() {
       winston.format.timestamp(),
       winston.format.printf(messageFormatter),
     ),
-    filename: `${logpath}/logs/homepage.log`,
+    filename: `${logpath}/homepage.log`,
     handleExceptions: true,
     handleRejections: true,
   });

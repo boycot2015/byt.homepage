@@ -161,7 +161,7 @@ export default function Component({ service }) {
 
   const { widget } = service;
 
-  const { mappings = [], refreshInterval = 10000, display = "block" } = widget;
+  const { mappings = [], refreshInterval = 60000, display = "block" } = widget;
   const { data: customData, error: customError } = useWidgetAPI(widget, null, {
     refreshInterval: Math.max(1000, refreshInterval),
   });

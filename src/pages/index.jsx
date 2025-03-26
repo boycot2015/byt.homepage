@@ -20,13 +20,14 @@ import { SettingsContext } from "utils/contexts/settings";
 import { TabContext } from "utils/contexts/tab";
 import ErrorBoundary from "components/errorboundry";
 import QuickLaunch from "components/quicklaunch";
+import Totop from "components/totop";
 
 import { bookmarksResponse, servicesResponse, widgetsResponse } from "utils/config/api-response";
 import themes from "utils/styles/themes";
 import { getSettings } from "utils/config/config";
 import useWindowFocus from "utils/hooks/window-focus";
 import createLogger from "utils/logger";
-import Totop from "components/totop";
+
 const ThemeToggle = dynamic(() => import("components/toggles/theme"), {
   ssr: false,
 });

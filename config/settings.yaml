@@ -1,0 +1,38 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/settings/
+title: byt-网址导航
+language: zh-CN
+logpath: /
+# base: https://nav.boycot.top
+background:
+  # image: https://images.unsplash.com/photo-1502790671504-542ad42d5189?auto=format&fit=crop&w=2560&q=80
+  blur: xl
+hideErrors: true
+hideVersion: true
+showStats: true
+useEqualHeights: true
+# statusStyle: "dot"
+# bookmarksStyle: icons
+cardBlur: md
+providers:
+  openweathermap: f5f08f29345fc1ff9bee5b40cdf8fc24
+headerStyle: boxed # boxedWidgets boxed clean underlined
+disableCollapse: true
+layout:
+  小组件:
+    header: false
+    style: row
+    columns: 4
+  影视热播:
+    style: row
+    columns: 3
+  开发指南:
+    style: row
+    columns: 3
+  学习娱乐:
+    style: row
+    columns: 3
+  个人作品:
+    style: row
+    columns: 4

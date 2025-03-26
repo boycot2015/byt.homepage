@@ -38,7 +38,7 @@ export default function Totop() {
     isShow ? <div
         key={`totop`}
         className={classNames(
-          "fixed cursor-pointer right-10 z-999999 bottom-10 leading-[24px] flex items-center text-2xl bg-[#ccc] rounded-full p-2 drop-md",
+          "fixed cursor-pointer right-10 z-999999 bottom-5 leading-[24px] flex items-center text-2xl bg-[#ccc] rounded-full p-2 drop-md",
         )}
         onClick={(e) => totop(e)}
       >
