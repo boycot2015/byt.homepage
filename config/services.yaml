@@ -56,40 +56,43 @@
         icon: mdi-movie
         widget:
             type: customapi
-            url: http://movie.boycot.top/api.php/provide/vod/?ac=list
+            url: https://api.boycot.top/api/movie?type=cms&ac=list&cate=7
             method: GET
+            refreshInterval: 60000
             display: dynamic-list
             mappings:
-                items: list
-                label: vod_name
-                name: vod_remarks
-                target: http://movie.boycot.top/index.php/vod/detail/id/{vod_id}.html
+                items: data.movieList
+                label: nm
+                name: status
+                target: https://group.boycot.top/movie/detail?type=cms&id={id}
                 limit: 6
     - 电视剧:
         icon: mdi-television-classic
         widget:
             type: customapi
-            url: http://movie.boycot.top/api.php/provide/vod/?ac=list&t=13
+            url: https://api.boycot.top/api/movie?type=cms&ac=list&cate=13
             method: GET
+            refreshInterval: 60000
             display: dynamic-list
             mappings:
-                items: list
-                label: vod_name
-                name: vod_remarks
-                target: http://movie.boycot.top/index.php/vod/detail/id/{vod_id}.html
+                items: data.movieList
+                label: nm
+                name: status
+                target: https://group.boycot.top/movie/detail?type=cms&id={id}
                 limit: 6
     - 动漫:
         icon: mdi-star
         widget:
             type: customapi
-            url: http://movie.boycot.top/api.php/provide/vod/?ac=list&t=29
+            url: https://api.boycot.top/api/movie?type=cms&ac=list&cate=29
             method: GET
+            refreshInterval: 60000
             display: dynamic-list
             mappings:
-                items: list
-                label: vod_name
-                name: vod_remarks
-                target: http://movie.boycot.top/index.php/vod/detail/id/{vod_id}.html
+                items: data.movieList
+                label: nm
+                name: status
+                target: https://group.boycot.top/movie/detail?type=cms&id={id}
                 limit: 6
 
 - 数码产品:
