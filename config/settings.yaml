@@ -1,11 +1,11 @@
 ---
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/settings/
-title: byt-网址导航
+title: byt-新闻导航
 language: zh-CN
 copyright: <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank"><img style="margin-right:5px;" title="粤ICP备18002072号" src="https://img.shields.io/badge/%E7%B2%A4ICP%E5%A4%87-18002072%E5%8F%B7-red"></a>©️2025 Powered by boycot 
 logpath: /
-# base: https://nav.boycot.top
+# base: https://news.boycot.top
 background:
   # image: https://images.unsplash.com/photo-1502790671504-542ad42d5189?auto=format&fit=crop&w=2560&q=80
   blur: xl

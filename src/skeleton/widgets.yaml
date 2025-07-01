@@ -2,7 +2,7 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/info-widgets/
 - logo:
-    icon: /mstile-70x70.png
+    icon: /favicon.svg
 # - greeting:
 #     text_size: xl
 #     text: byt-nav

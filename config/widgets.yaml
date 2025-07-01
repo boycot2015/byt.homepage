@@ -2,7 +2,7 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/info-widgets/
 - logo:
-    icon: /mstile-70x70.png
+    icon: /favicon.svg
 # - greeting:
 #     text_size: xl
 #     text: byt-nav
@@ -10,10 +10,12 @@
     cpu: true
     memory: true
     disk: /
+    locale: zh-CN
 - search:
     provider: bing
     target: _blank
 - openweathermap:
+    locale: zh-CN
     label: 深圳
     latitude: 22.5445741
     longitude: 114.0545429
