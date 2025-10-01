@@ -101,10 +101,6 @@ importers:
       xml-js:
         specifier: ^1.6.11
         version: 1.6.11
-    optionalDependencies:
-      osx-temperature-sensor:
-        specifier: ^1.0.8
-        version: 1.0.8
     devDependencies:
       '@tailwindcss/forms':
         specifier: ^0.5.10
@@ -143,14 +139,18 @@ importers:
         specifier: ^3.5.2
         version: 3.5.2
       tailwind-scrollbar:
-        specifier: ^4.0.1
-        version: 4.0.1(react@18.3.1)(tailwindcss@4.0.9)
+        specifier: ^4.0.2
+        version: 4.0.2(react@18.3.1)(tailwindcss@4.0.9)
       tailwindcss:
         specifier: ^4.0.9
         version: 4.0.9
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
+    optionalDependencies:
+      osx-temperature-sensor:
+        specifier: ^1.0.8
+        version: 1.0.8
 
 packages:
 
@@ -2527,8 +2527,8 @@ packages:
     os: [darwin, linux, win32, freebsd, openbsd, netbsd, sunos, android]
     hasBin: true
 
-  tailwind-scrollbar@4.0.1:
-    resolution: {integrity: sha512-j2ZfUI7p8xmSQdlqaCxEb4Mha8ErvWjDVyu2Ke4IstWprQ/6TmIz1GSLE62vsTlXwnMLYhuvbFbIFzaJGOGtMg==}
+  tailwind-scrollbar@4.0.2:
+    resolution: {integrity: sha512-wAQiIxAPqk0MNTPptVe/xoyWi27y+NRGnTwvn4PQnbvB9kp8QUBiGl/wsfoVBHnQxTmhXJSNt9NHTmcz9EivFA==}
     engines: {node: '>=12.13.0'}
     peerDependencies:
       tailwindcss: 4.x
@@ -5347,7 +5347,7 @@ snapshots:
 
   systeminformation@5.25.11: {}
 
-  tailwind-scrollbar@4.0.1(react@18.3.1)(tailwindcss@4.0.9):
+  tailwind-scrollbar@4.0.2(react@18.3.1)(tailwindcss@4.0.9):
     dependencies:
       prism-react-renderer: 2.4.1(react@18.3.1)
       tailwindcss: 4.0.9
