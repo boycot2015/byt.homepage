@@ -101,14 +101,10 @@ importers:
       xml-js:
         specifier: ^1.6.11
         version: 1.6.11
-    optionalDependencies:
-      osx-temperature-sensor:
-        specifier: ^1.0.8
-        version: 1.0.8
     devDependencies:
       '@tailwindcss/forms':
         specifier: ^0.5.10
-        version: 0.5.10(tailwindcss@4.0.9)
+        version: 0.5.10(tailwindcss@4.1.13)
       '@tailwindcss/postcss':
         specifier: ^4.0.9
         version: 4.0.9
@@ -144,13 +140,17 @@ importers:
         version: 3.5.2
       tailwind-scrollbar:
         specifier: ^4.0.1
-        version: 4.0.1(react@18.3.1)(tailwindcss@4.0.9)
+        version: 4.0.1(react@18.3.1)(tailwindcss@4.1.13)
       tailwindcss:
-        specifier: ^4.0.9
-        version: 4.0.9
+        specifier: ^4.1.13
+        version: 4.1.13
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
+    optionalDependencies:
+      osx-temperature-sensor:
+        specifier: ^1.0.8
+        version: 1.0.8
 
 packages:
 
@@ -2536,6 +2536,9 @@ packages:
   tailwindcss@4.0.9:
     resolution: {integrity: sha512-12laZu+fv1ONDRoNR9ipTOpUD7RN9essRVkX36sjxuRUInpN7hIiHN4lBd/SIFjbISvnXzp8h/hXzmU8SQQYhw==}
 
+  tailwindcss@4.1.13:
+    resolution: {integrity: sha512-i+zidfmTqtwquj4hMEwdjshYYgMbOrPzb9a0M3ZgNa0JMoZeFC6bxZvO8yr8ozS6ix2SDz0+mvryPeBs2TFE+w==}
+
   tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
     engines: {node: '>=6'}
@@ -3070,10 +3073,10 @@ snapshots:
     dependencies:
       defer-to-connect: 2.0.1
 
-  '@tailwindcss/forms@0.5.10(tailwindcss@4.0.9)':
+  '@tailwindcss/forms@0.5.10(tailwindcss@4.1.13)':
     dependencies:
       mini-svg-data-uri: 1.4.4
-      tailwindcss: 4.0.9
+      tailwindcss: 4.1.13
 
   '@tailwindcss/node@4.0.9':
     dependencies:
@@ -5347,14 +5350,16 @@ snapshots:
 
   systeminformation@5.25.11: {}
 
-  tailwind-scrollbar@4.0.1(react@18.3.1)(tailwindcss@4.0.9):
+  tailwind-scrollbar@4.0.1(react@18.3.1)(tailwindcss@4.1.13):
     dependencies:
       prism-react-renderer: 2.4.1(react@18.3.1)
-      tailwindcss: 4.0.9
+      tailwindcss: 4.1.13
     transitivePeerDependencies:
       - react
 
   tailwindcss@4.0.9: {}
+
+  tailwindcss@4.1.13: {}
 
   tapable@2.2.1: {}
 
