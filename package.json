@@ -40,7 +40,7 @@
     "systeminformation": "^5.25.11",
     "tough-cookie": "^5.1.2",
     "urbackup-server-api": "^0.8.9",
-    "winston": "^3.17.0",
+    "winston": "^3.18.3",
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
