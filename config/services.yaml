@@ -2,8 +2,61 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/services/
 - 小组件:
+    - 股票行情:
+        icon: mdi-trending-up
+        widget:
+            type: customapi
+            url: https://ak.boycot.top/api/public/stock_zh_index_spot_sina
+            method: GET
+            display: dynamic-list
+            mappings:
+                # items: data
+                label: 名称
+                name: 涨跌幅
+                extra: 涨跌额
+                # additionalField:
+                #     field: 最新价
+                # target: https://www.36kr.com/p/{id}
+                limit: 7
+    - 格隆汇:
+        icon: https://cdn.gelonghui.com/static/web/www.ico.la.ico
+        widget:
+            type: customapi
+            url: https://api.boycot.top/api/hots?name=gelonghui
+            method: GET
+            display: dynamic-list
+            mappings:
+                items: data
+                label: title
+                name: hots
+                target: https://www.gelonghui.com/news/{id}
+                limit: 5
+    - 掘金:
+        icon: https://lf-web-assets.juejin.cn/obj/juejin-web/xitu_juejin_web/static/favicons/favicon-32x32.png
+        widget:
+            type: customapi
+            url: https://api.boycot.top/api/hots?name=juejin
+            method: GET
+            display: dynamic-list
+            mappings:
+                items: data
+                label: title
+                name: hots
+                target: https://www.juejin.cn/post/{id}
+                limit: 5
+    - 日程:
+        icon: mdi-calendar-range
+        widgets:
+            - type: metingjs
+              playId: 19723756
+              mini: true
+              fixed: true
+              playtheme: '#333'
+            - type: calendar
+
+- 新闻热点:
     - 今日头条:
-        icon: https://sf3-cdn-tos.douyinstatic.com/obj/eden-cn/uhbfnupkbps/toutiao_favicon.ico
+        icon: https://ts3.tc.mm.bing.net/th/id/ODF.k-oWqCOSZF29E5uZDI5s3Q?w=32&h=32&qlt=90&pcl=fffffc&o=6&cb=defcache1&pid=1.2&defcache=1
         widget:
             type: customapi
             url: https://api.boycot.top/api/hots?name=toutiao
@@ -41,15 +94,19 @@
                 name: hots
                 target: https://www.juejin.cn/post/{id}
                 limit: 5
-    - 日程:
-        icon: mdi-calendar-range
-        widgets:
-            - type: metingjs
-              playId: 19723756
-              mini: true
-              fixed: true
-              playtheme: '#333'
-            - type: calendar
+    - 知乎:
+        icon: https://static.zhihu.com/heifetz/favicon.ico
+        widget:
+            type: customapi
+            url: https://api.boycot.top/api/hots?name=知乎
+            method: GET
+            display: dynamic-list
+            mappings:
+                items: data
+                label: title
+                name: hots
+                target: https://www.zhihu.com/question/{id}
+                limit: 6
 
 - 影视热播:
     - 电影:
@@ -193,7 +250,7 @@
                 items: data.0
                 label: title
                 name: category.value
-                target: https://www.boycot.top/posts/2/{title}
+                target: https://blog-new.boycot.top/list/{id}
                 limit: 6
     - 笔记:
         icon: mdi-note
@@ -207,7 +264,7 @@
                 items: data.0
                 label: title
                 name: category.value
-                target: https://www.boycot.top/posts/2/{title}
+                target: https://blog-new.boycot.top/list/{id}
                 limit: 6
 
 - 开发指南:
@@ -296,25 +353,30 @@
                 label: title
                 name: hots
                 target: https://www.zhihu.com/question/{id}
-                limit: 6
+                limit: 8
     
 - 个人作品:
-    - 每日手记:
+    - 个人博客:
         icon:  https://boycot.top/favicon.svg
         href:  https://boycot.top
-        description: 每日手记
+        description: 个人博客
         ping: boycot.top
-    - web-os:
-        icon: https://os.boycot.top/favicon.png
-        href: https://os.boycot.top
-        description: powered by svelte
-        ping: os.boycot.top
-    - 影视: 
-        icon: http://movie.boycot.top/template/mxone/mxstatic/picture/logo.png
-        href: http://movie.boycot.top/
-        description: 免费影视大全
-        ping: movie.boycot.top
-    - 音乐:
+    - 每日手记:
+        icon:  https://dailynote.boycot.top/favicon.svg
+        href:  https://dailynote.boycot.top
+        description: 每日手记
+        ping: dailynote.boycot.top
+    - byt tab:
+        icon: https://tab.boycot.top/favicon.ico
+        href: https://tab.boycot.top
+        description: one tab from all
+        ping: tab.boycot.top
+    - 音乐: 
+        icon: http://music.boycot.top/logo.svg
+        href: http://music.boycot.top/
+        description: 免费音乐大全
+        ping: music.boycot.top
+    - 音乐插件:
         widget:
             type: metingjs
             playId: 3778678

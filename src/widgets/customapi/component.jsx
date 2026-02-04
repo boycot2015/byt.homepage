@@ -245,6 +245,7 @@ export default function Component({ service }) {
               listItems.map((item, index) => {
                 const itemName = shvl.get(item, name, "");
                 const itemLabel = shvl.get(item, label, "");
+                const itemExtra = mappings.extra ? shvl.get(item, mappings.extra, "") : '';
                 const itemUrl = target ? target.replace(/\{([^}]+)\}/g, (_, key) => item[key] || "") : null;
                 const className =
                   "bg-theme-200/50 dark:bg-theme-900/20 rounded-sm m-1 flex-1 flex flex-row items-center justify-between p-2 text-xs";
@@ -260,14 +261,14 @@ export default function Component({ service }) {
                     <div className="flex flex-row flex-3">
                       <div className="font-bold line-clamp-2">{itemLabel}</div>
                     </div>
-                    {itemName?<div className="font-thin flex-1 text-right line-clamp-1">{itemName}</div>:null}
+                    {itemName?<div className="font-thin flex-1 text-right line-clamp-1">{itemName}{itemExtra && <span className="ml-2">{itemExtra}</span>}</div>:null}
                   </a>
                 ) : (
                   <div key={`${itemName}-${index}`} className={className}>
                     <div className="flex flex-row flex-3">
                       <div className="font-bold line-clamp-2">{itemLabel}</div>
                     </div>
-                    {itemName?<div className="font-thin flex-1 text-right line-clamp-1">{itemName}</div>:null}
+                    {itemName?<div className="font-thin flex-1 text-right line-clamp-1">{itemName}{itemExtra && <span className="ml-2">{itemExtra}</span>}</div>:null}
                   </div>
                 );
               })

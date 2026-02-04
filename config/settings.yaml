@@ -25,6 +25,9 @@ layout:
     header: false
     style: row
     columns: 4
+  新闻热点:
+    style: row
+    columns: 4
   影视热播:
     style: row
     columns: 3
@@ -42,4 +45,4 @@ layout:
     columns: 3
   个人作品:
     style: row
-    columns: 4
+    columns: 5

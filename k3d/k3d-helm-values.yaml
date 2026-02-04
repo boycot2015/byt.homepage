@@ -48,7 +48,7 @@ config:
 
 env:
   - name: HOMEPAGE_ALLOWED_HOSTS
-    value: "homepage.k3d.localhost:8080"
+    value: "*"
 
 serviceAccount:
   create: true
