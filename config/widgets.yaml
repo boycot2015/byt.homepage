@@ -2,7 +2,7 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/info-widgets/
 - logo:
-    icon: /favicon.svg
+    icon: mdi-monitor-dashboard
 # - greeting:
 #     text_size: xl
 #     text: byt-nav
@@ -14,6 +14,14 @@
 - search:
     provider: bing
     target: _blank
+# - openmeteo:
+#     label: Current
+#     latitude: 22.5445741
+#     longitude: 114.0545429
+#     units: metric # or imperial
+#     cache: 5 # Time in minutes to cache API responses, to stay within limits
+#     format: # optional, Intl.NumberFormat options
+#       maximumFractionDigits: 1
 - openweathermap:
     locale: zh-CN
     label: 深圳
@@ -31,3 +39,22 @@
         # dateStyle: short
         timeStyle: short
         hour12: true
+- stocks:
+    provider: finnhub
+    color: true # optional, defaults to true
+    cache: 10 # optional, default caches results for 1 minute
+    watchlist:
+    # - 000001.SH
+    # - 399001.SZ
+    # - 399006.SZ
+    # - 000300.SH
+    # - 000016.SH
+    # - 000905.SH
+    - SH
+    # - SZ
+    - NVDA
+    - AMD
+    - TSM
+    - MSFT
+    - AAPL
+    - BRK.A

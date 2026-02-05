@@ -80,10 +80,10 @@ function formatValue(t, mapping, rawValue) {
       value = t("common.number", { value: parseInt(value, 10) });
       break;
     case "float":
-      value = t("common.number", { value });
+      value = t("common.number", { value: parseFloat(value).toFixed(2) });
       break;
     case "percent":
-      value = t("common.percent", { value });
+      value = t("common.percent", { value: parseFloat(value).toFixed(2) });
       break;
     case "duration":
       value = t("common.duration", { value });
@@ -134,14 +134,14 @@ function formatValue(t, mapping, rawValue) {
 }
 
 function getColor(mapping, customData) {
-  const value = getValue(mapping.additionalField.field, customData);
-  const { color } = mapping.additionalField;
+  const value = getValue(mapping.field, customData);
+  const { color } = mapping || {};
 
   switch (color) {
     case "adaptive":
       try {
         const number = parseFloat(value);
-        return number > 0 ? "text-emerald-300" : "text-rose-300";
+        return number > 0 ? "text-red-300" : "text-green-300";
       } catch (e) {
         return "";
       }
@@ -186,7 +186,7 @@ export default function Component({ service }) {
         return (
           <Container service={service}>
             <div className="flex flex-col w-full">
-              {mappings.map((mapping) => (
+              {mappings?.map((mapping) => (
                 <div
                   key={mapping.label}
                   className="bg-theme-200/50 dark:bg-theme-900/20 rounded-sm m-1 flex-1 flex flex-row items-center justify-between p-1 text-xs animate-pulse"
@@ -204,7 +204,7 @@ export default function Component({ service }) {
       default:
         return (
           <Container service={service}>
-            {mappings.slice(0, 4).map((item) => (
+            {mappings?.slice(0, 4)?.map((item) => (
               <Block label={item.label} key={item.label} />
             ))}
           </Container>
@@ -242,10 +242,11 @@ export default function Component({ service }) {
                 <div className="font-thin pl-2">No items found</div>
               </div>
             ) : (
-              listItems.map((item, index) => {
-                const itemName = shvl.get(item, name, "");
+              listItems?.map((item, index) => {
+                const itemName = shvl.get(item, name.field || name, "");
                 const itemLabel = shvl.get(item, label, "");
                 const itemExtra = mappings.extra ? shvl.get(item, mappings.extra, "") : '';
+                if (typeof itemExtra == 'number') itemExtra = itemExtra.toFixed(2);
                 const itemUrl = target ? target.replace(/\{([^}]+)\}/g, (_, key) => item[key] || "") : null;
                 const className =
                   "bg-theme-200/50 dark:bg-theme-900/20 rounded-sm m-1 flex-1 flex flex-row items-center justify-between p-2 text-xs";
@@ -261,14 +262,26 @@ export default function Component({ service }) {
                     <div className="flex flex-row flex-3">
                       <div className="font-bold line-clamp-2">{itemLabel}</div>
                     </div>
-                    {itemName?<div className="font-thin flex-1 text-right line-clamp-1">{itemName}{itemExtra && <span className="ml-2">{itemExtra}</span>}</div>:null}
+                    {itemName?<div className="font-thin flex-1 text-right line-clamp-1">{itemName}{itemExtra && <span className="ml-1">{itemExtra}</span>}</div>:null}
                   </a>
                 ) : (
                   <div key={`${itemName}-${index}`} className={className}>
                     <div className="flex flex-row flex-3">
                       <div className="font-bold line-clamp-2">{itemLabel}</div>
                     </div>
-                    {itemName?<div className="font-thin flex-1 text-right line-clamp-1">{itemName}{itemExtra && <span className="ml-2">{itemExtra}</span>}</div>:null}
+                    <div className="flex gap-4 flex-row text-right">
+                      {itemName?<div className={`font-bold flex-1 text-right line-clamp-1 ${getColor(mappings.name, item)}`}>{formatValue(t, mappings, getValue(mappings.name.field || mappings.name, item))}</div>:null}
+                      {mappings.field && (
+                        <div className={`font-bold ${getColor(mappings, item)}`}>
+                          {formatValue(t, mappings.field, getValue(mappings.field, item))}
+                        </div>
+                      )}
+                      {mappings.additionalField && (
+                        <div className={`font-bold ${getColor(mappings.additionalField, item)}`}>
+                          {formatValue(t, mappings.additionalField, getValue(mappings.additionalField.field, item))}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 );
               })
@@ -280,16 +293,16 @@ export default function Component({ service }) {
       return (
         <Container service={service}>
           <div className="flex flex-col w-full">
-            {mappings.map((mapping) => (
+            {mappings?.map((mapping) => (
               <div
                 key={mapping.label}
                 className="bg-theme-200/50 dark:bg-theme-900/20 rounded-sm m-1 flex-1 flex flex-row items-center justify-between p-1 text-xs"
               >
                 <div className="font-thin pl-2">{mapping.label}</div>
-                <div className="flex flex-row text-right">
-                  <div className="font-bold mr-2">{formatValue(t, mapping, getValue(mapping.field, customData))}</div>
+                <div className="flex gap-4 flex-row text-right">
+                  <div className="font-bold">{formatValue(t, mapping, getValue(mapping.field, customData))}</div>
                   {mapping.additionalField && (
-                    <div className={`font-bold mr-2 ${getColor(mapping, customData)}`}>
+                    <div className={`font-bold ${getColor(mapping.additionalField, customData)}`}>
                       {formatValue(t, mapping.additionalField, getValue(mapping.additionalField.field, customData))}
                     </div>
                   )}
@@ -303,7 +316,7 @@ export default function Component({ service }) {
     default:
       return (
         <Container service={service}>
-          {mappings.slice(0, 4).map((mapping) => (
+          {mappings?.slice(0, 4)?.map((mapping) => (
             <Block
               label={mapping.label}
               key={mapping.label}

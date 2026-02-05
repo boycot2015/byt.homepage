@@ -3,17 +3,51 @@
 # https://gethomepage.dev/configs/services/
 - 小组件:
     - 股票行情:
-        icon: mdi-trending-up
+        icon: mdi-chart-line-variant
         widget:
             type: customapi
-            url: https://ak.boycot.top/api/public/stock_zh_index_spot_sina
+            url: https://ak.boycot.top/api/public/stock_zh_index_spot_em?symbol=沪深重要指数
+            # url: https://ak.boycot.top/api/public/fund_etf_spot_em
             method: GET
+            refreshInterval: 30000
             display: dynamic-list
             mappings:
                 # items: data
+                format: number
+                color: adaptive
                 label: 名称
-                name: 涨跌幅
-                extra: 涨跌额
+                name:
+                    field: 最新价
+                    format: float
+                    color: theme
+                additionalField:
+                    field: 涨跌幅
+                    format: float
+                    color: adaptive
+                    suffix: '%'
+                # extra: 涨跌额
+                # target: https://www.36kr.com/p/{id}
+                limit: 7
+    - 热股排行:
+        icon: mdi-chart-line
+        widget:
+            type: customapi
+            url: https://ak.boycot.top/api/public/stock_hot_rank_em
+            method: GET
+            refreshInterval: 30000
+            display: dynamic-list
+            mappings:
+                # items: data
+                label: 股票名称
+                name:
+                    field: 最新价
+                    format: float
+                    color: theme
+                additionalField:
+                    field: 涨跌幅
+                    format: float
+                    color: adaptive
+                    suffix: '%'
                 # additionalField:
                 #     field: 最新价
                 # target: https://www.36kr.com/p/{id}
@@ -24,25 +58,13 @@
             type: customapi
             url: https://api.boycot.top/api/hots?name=gelonghui
             method: GET
+            refreshInterval: 15000
             display: dynamic-list
             mappings:
                 items: data
                 label: title
                 name: hots
-                target: https://www.gelonghui.com/news/{id}
-                limit: 5
-    - 掘金:
-        icon: https://lf-web-assets.juejin.cn/obj/juejin-web/xitu_juejin_web/static/favicons/favicon-32x32.png
-        widget:
-            type: customapi
-            url: https://api.boycot.top/api/hots?name=juejin
-            method: GET
-            display: dynamic-list
-            mappings:
-                items: data
-                label: title
-                name: hots
-                target: https://www.juejin.cn/post/{id}
+                target: https://www.gelonghui.com{id}
                 limit: 5
     - 日程:
         icon: mdi-calendar-range
@@ -55,6 +77,19 @@
             - type: calendar
 
 - 新闻热点:
+    - 百度:
+        icon: https://baidu.com/favicon.ico
+        widget:
+            type: customapi
+            url: https://api.boycot.top/api/hots?name=baidu
+            method: GET
+            display: dynamic-list
+            mappings:
+                items: data
+                label: title
+                name: hots
+                target: https://www.baidu.com/s?wd={title}
+                limit: 6
     - 今日头条:
         icon: https://ts3.tc.mm.bing.net/th/id/ODF.k-oWqCOSZF29E5uZDI5s3Q?w=32&h=32&qlt=90&pcl=fffffc&o=6&cb=defcache1&pid=1.2&defcache=1
         widget:
@@ -68,6 +103,34 @@
                 name: hots
                 target: https://www.toutiao.com/trending/{id}
                 limit: 6
+    - 网易:
+        icon: https://static.ws.126.net/163/f2e/common/share-icon.png
+        widget:
+            type: customapi
+            url: https://api.boycot.top/api/hots?name=netease
+            method: GET
+            display: dynamic-list
+            mappings:
+                items: data
+                label: title
+                name: desc
+                target: https://www.163.com/dy/article/{id}.html
+                limit: 5
+    - 澎湃新闻:
+        icon: https://thepaper.cn/favicon.ico
+        widget:
+            type: customapi
+            url: https://api.boycot.top/api/hots?name=thepaper
+            method: GET
+            display: dynamic-list
+            mappings:
+                items: data
+                label: title
+                name: hots
+                target: https://www.thepaper.cn/post/{id}
+                limit: 5
+
+- 数码科技:
     - 36kr:
         icon: https://www.36kr.com/favicon.ico
         widget:
@@ -94,20 +157,74 @@
                 name: hots
                 target: https://www.juejin.cn/post/{id}
                 limit: 5
-    - 知乎:
-        icon: https://static.zhihu.com/heifetz/favicon.ico
+    - 酷安:
+        icon: https://www.coolapk.com/favicon.ico
         widget:
             type: customapi
-            url: https://api.boycot.top/api/hots?name=知乎
+            url: https://api.boycot.top/api/hots?name=coolapk
             method: GET
             display: dynamic-list
             mappings:
                 items: data
                 label: title
                 name: hots
-                target: https://www.zhihu.com/question/{id}
-                limit: 6
+                target: https://www.coolapk.com/feed/{id}
+                limit: 5
+    - iT之家:
+        icon: https://ithome.com/favicon.ico
+        widget:
+            type: customapi
+            url: https://api.boycot.top/api/hots?name=ithome
+            method: GET
+            display: dynamic-list
+            mappings:
+                items: data
+                label: title
+                name: hots
+                target: '{id}'
+                limit: 5
 
+- 新闻娱乐:
+    - 华尔街见闻:
+        icon: https://static.wscn.net/wscn/_static/favicon.png
+        widget:
+            type: customapi
+            url: https://api.boycot.top/api/hots?name=wallstreetcn
+            method: GET
+            display: dynamic-list
+            mappings:
+                items: data
+                label: title
+                name: desc
+                target: https://wallstreetcn.com/articles/{id}
+                limit: 6
+    - 贴吧:
+        icon: https://tb3.bdstatic.com/public/icon/favicon-v2.ico
+        widget:
+            type: customapi
+            url: https://api.boycot.top/api/hots?name=tieba
+            method: GET
+            display: dynamic-list
+            mappings:
+                items: data
+                label: title
+                name: desc
+                target: https://tieba.baidu.com/hottopic/browse/hottopic?topic_id={id}
+                limit: 8
+    - 凤凰新闻:
+        icon: https://www.ifeng.com/favicon.ico
+        widget:
+            type: customapi
+            url: https://api.boycot.top/api/hots?name=ifeng
+            method: GET
+            display: dynamic-list
+            mappings:
+                items: data
+                label: title
+                name: hots
+                target: https://news.ifeng.com/c/{id}
+                limit: 8
+ 
 - 影视热播:
     - 电影:
         icon: mdi-movie
@@ -237,6 +354,7 @@
                 name: brief
                 target: https://buy.realme.com/cn/goods/{id}
                 limit: 6
+
 - 学习笔记:
     - 文章:
         icon: mdi-newspaper-variant-outline
@@ -314,47 +432,6 @@
         description: Astro 是集成 Vue、React、Svelte 等 Web 的框架。
         ping: docs.astro.build
 
-- 新闻娱乐:
-    - 网易:
-        icon: https://static.ws.126.net/163/f2e/common/share-icon.png
-        widget:
-            type: customapi
-            url: https://api.boycot.top/api/hots?name=netease
-            method: GET
-            display: dynamic-list
-            mappings:
-                items: data
-                label: title
-                name: desc
-                target: https://www.163.com/dy/article/{id}.html
-                limit: 6
-    - 贴吧:
-        icon: https://tb3.bdstatic.com/public/icon/favicon-v2.ico
-        widget:
-            type: customapi
-            url: https://api.boycot.top/api/hots?name=tieba
-            method: GET
-            display: dynamic-list
-            mappings:
-                items: data
-                label: title
-                name: desc
-                target: https://tieba.baidu.com/hottopic/browse/hottopic?topic_id={id}
-                limit: 8
-    - 知乎:
-        icon: https://static.zhihu.com/heifetz/favicon.ico
-        widget:
-            type: customapi
-            url: https://api.boycot.top/api/hots?name=zhihu
-            method: GET
-            display: dynamic-list
-            mappings:
-                items: data
-                label: title
-                name: hots
-                target: https://www.zhihu.com/question/{id}
-                limit: 8
-    
 - 个人作品:
     - 个人博客:
         icon:  https://boycot.top/favicon.svg
@@ -367,18 +444,18 @@
         description: 每日手记
         ping: dailynote.boycot.top
     - byt tab:
-        icon: https://tab.boycot.top/favicon.ico
+        icon: mdi-tab
         href: https://tab.boycot.top
-        description: one tab from all
+        description: one tab for all
         ping: tab.boycot.top
     - 音乐: 
         icon: http://music.boycot.top/logo.svg
         href: http://music.boycot.top/
-        description: 免费音乐大全
+        description: 开源音乐，vue3 + vite
         ping: music.boycot.top
     - 音乐插件:
         widget:
             type: metingjs
-            playId: 3778678
+            playId: 3778678 
             mini: true
             fixed: true
