@@ -141,7 +141,7 @@ function getColor(mapping, customData) {
     case "adaptive":
       try {
         const number = parseFloat(value);
-        return number > 0 ? "text-red-300" : "text-green-300";
+        return number > 0 ? "text-red-500" : "text-green-500";
       } catch (e) {
         return "";
       }

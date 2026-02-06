@@ -2,8 +2,8 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/settings/
 title: byt-新闻导航
-language: zh-CN
-copyright: <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank"><img style="margin-right:5px;" title="粤ICP备18002072号" src="https://img.shields.io/badge/%E7%B2%A4ICP%E5%A4%87-18002072%E5%8F%B7-red"></a>©️2025 Powered by <a href="https://www.boycot.top" target="_blank">Boycot</a> 
+language: zh-Hans
+copyright: <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank"><img style="margin-right:5px;" title="粤ICP备18002072号" src="https://img.shields.io/badge/%E7%B2%A4ICP%E5%A4%87-18002072%E5%8F%B7-red"></a>©️2025 Powered by  <a href="https://www.boycot.top" target="_blank" style="margin-left:5px;"> Boycot</a> 
 logpath: /
 # base: https://news.boycot.top
 background:
@@ -19,13 +19,19 @@ cardBlur: md
 providers:
   openweathermap: f5f08f29345fc1ff9bee5b40cdf8fc24
   finnhub: d6260epr01qvmk0k8rk0d6260epr01qvmk0k8rkg
+  # uptimerobot: ur3299911-d63500d59d1475c2b20fd452
 headerStyle: boxed # boxedWidgets boxed clean underlined
 disableCollapse: true
+
 layout:
   小组件:
     header: false
     style: row
     columns: 4
+  # 小工具:
+  #   header: false
+  #   style: row
+  #   columns: 3
   新闻热点:
     style: row
     columns: 4

@@ -2,18 +2,41 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/info-widgets/
 - logo:
-    icon: mdi-monitor-dashboard
+    icon: mdi-newspaper-variant
 # - greeting:
 #     text_size: xl
 #     text: byt-nav
+# - stocks:
+#     locale: zh-CN
+#     provider: finnhub
+#     color: true # optional, defaults to true
+#     cache: 1 # optional, default caches results for 1 minute
+#     watchlist:
+#     - 000001.SH
+#     # - 399001.SZ
+#     # - 399006.SZ
+#     # - 000300.SH
+#     # - 000016.SH
+#     # - 000905.SH
+#     - SH
+#     - SZ
+#     - NVDA
+#     - AMD
+#     # - TSM
+#     # - MSFT
+#     # - AAPL
+#     # - BRK.A
 - resources:
     cpu: true
     memory: true
     disk: /
     locale: zh-CN
 - search:
-    provider: bing
+    provider: [bing, baidu, google]
     target: _blank
+    locale: zh-CN
+    focus: true
+    showSearchSuggestions: true
 # - openmeteo:
 #     label: Current
 #     latitude: 22.5445741
@@ -39,22 +62,3 @@
         # dateStyle: short
         timeStyle: short
         hour12: true
-- stocks:
-    provider: finnhub
-    color: true # optional, defaults to true
-    cache: 10 # optional, default caches results for 1 minute
-    watchlist:
-    # - 000001.SH
-    # - 399001.SZ
-    # - 399006.SZ
-    # - 000300.SH
-    # - 000016.SH
-    # - 000905.SH
-    - SH
-    # - SZ
-    - NVDA
-    - AMD
-    - TSM
-    - MSFT
-    - AAPL
-    - BRK.A

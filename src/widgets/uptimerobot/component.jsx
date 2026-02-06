@@ -45,6 +45,8 @@ export default function Component({ service }) {
 
   // single monitor
   const monitor = uptimerobotData.monitors[0];
+  console.log(monitor, 'monitor');
+  
   let status;
   let uptime = 0;
   let logIndex = 0;
@@ -58,7 +60,7 @@ export default function Component({ service }) {
       break;
     case 2:
       status = t("uptimerobot.up");
-      uptime = t("common.duration", { value: monitor.logs[0].duration });
+      uptime = t("common.duration", { value: monitor?.logs[0]?.duration });
       logIndex = 1;
       break;
     case 8:
@@ -72,9 +74,9 @@ export default function Component({ service }) {
       break;
   }
 
-  const lastDown = new Date(monitor.logs[logIndex].datetime * 1000).toLocaleString();
-  const downDuration = t("common.duration", { value: monitor.logs[logIndex].duration });
-  const hideDown = logIndex === 1 && monitor.logs[logIndex].type !== 1;
+  const lastDown = new Date(monitor.logs[logIndex]?.datetime * 1000).toLocaleString();
+  const downDuration = t("common.duration", { value: monitor.logs[logIndex]?.duration });
+  const hideDown = logIndex === 1 && monitor.logs[logIndex]?.type !== 1;
 
   return (
     <Container service={service}>

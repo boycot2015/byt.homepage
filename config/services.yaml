@@ -76,6 +76,22 @@
               playtheme: '#333'
             - type: calendar
 
+# - 小工具:
+#     - 网址运行情况:
+#         icon: mdi-monitor-eye
+#         widget:
+#             type: uptimerobot
+#             url: https://api.uptimerobot.com
+#             key: u3299911-7c09ef5ea54278227747d8f1
+    # - speedtest:
+    #     icon: mdi-monitor-eye
+    #     widget:
+    #         type: speedtest
+    #         url: http://115.190.155.174:8081
+    #         version: 1 # optional, default is 1
+    #         key: speedtestapikey # required for version 2
+    #         bitratePrecision: 3 # optional, default is 0
+
 - 新闻热点:
     - 百度:
         icon: https://baidu.com/favicon.ico
