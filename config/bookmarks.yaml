@@ -2,17 +2,17 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/bookmarks
 
-# - 开发者:
-#     - Github:
-#         - abbr: GH
-#           href: https://github.com/boycot2015
+- 开发者:
+    - Github:
+        - abbr: GH
+          href: https://github.com/boycot2015
 
-# - 博客:
-#     - 博客:
-#         - abbr: blog
-#           href: https://boycot.top/
+- 博客:
+    - 博客:
+        - abbr: blog
+          href: https://boycot.top/
 
-# - 影视:
-#     - 影视:
-#         - abbr: MV
-#           href: http://movie.boycot.top/
+- 影视:
+    - 影视:
+        - abbr: MV
+          href: http://movie.boycot.top/
