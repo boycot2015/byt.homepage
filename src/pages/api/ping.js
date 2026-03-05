@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { promise as ping } from "ping";
 
 import { getServiceItem } from "utils/config/service-helpers";

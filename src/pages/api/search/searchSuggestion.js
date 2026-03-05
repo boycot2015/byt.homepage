@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { searchProviders } from "components/widgets/search/search";
 
 import { getSettings } from "utils/config/config";

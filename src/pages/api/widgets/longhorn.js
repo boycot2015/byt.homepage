@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { httpProxy } from "../../../utils/proxy/http";
 import createLogger from "../../../utils/logger";
 import { getSettings } from "../../../utils/config/config";

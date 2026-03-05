@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import checkAndCopyConfig, { getSettings } from "utils/config/config";
 
 export default function handler({ res }) {

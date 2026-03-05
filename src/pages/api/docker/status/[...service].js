@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import Docker from "dockerode";
 
 import getDockerArguments from "utils/config/docker";

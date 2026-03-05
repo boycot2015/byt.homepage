@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { existsSync } from "fs";
 
 import createLogger from "utils/logger";

@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { formatApiCall } from "utils/proxy/api-helpers";
 import createLogger from "utils/logger";
 import genericProxyHandler from "utils/proxy/handlers/generic";

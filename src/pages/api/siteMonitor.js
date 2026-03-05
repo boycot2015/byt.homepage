@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { performance } from "perf_hooks";
 
 import { getServiceItem } from "utils/config/service-helpers";

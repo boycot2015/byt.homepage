@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { cachedRequest } from "utils/proxy/http";
 
 export default async function handler(req, res) {

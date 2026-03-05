@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { widgetsResponse } from "utils/config/api-response";
 
 export default async function handler(req, res) {

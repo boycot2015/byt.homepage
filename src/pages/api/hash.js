@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { join } from "path";
 import { createHash } from "crypto";
 import { readFileSync } from "fs";

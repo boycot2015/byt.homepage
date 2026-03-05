@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { cachedRequest } from "utils/proxy/http";
 import createLogger from "utils/logger";
 

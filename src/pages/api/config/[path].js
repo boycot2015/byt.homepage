@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import path from "path";
 import fs from "fs";
 

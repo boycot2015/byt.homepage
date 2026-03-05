@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import checkAndCopyConfig from "utils/config/config";
 
 const configs = ["docker.yaml", "settings.yaml", "services.yaml", "bookmarks.yaml"];

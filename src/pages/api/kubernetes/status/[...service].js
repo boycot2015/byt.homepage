@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { CoreV1Api } from "@kubernetes/client-node";
 
 import { getKubeConfig } from "../../../../utils/config/kubernetes";

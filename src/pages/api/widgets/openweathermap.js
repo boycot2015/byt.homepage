@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { cachedRequest } from "utils/proxy/http";
 import { getSettings } from "utils/config/config";
 import { getPrivateWidgetOptions } from "utils/config/widget-helpers";
