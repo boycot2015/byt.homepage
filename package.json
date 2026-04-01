@@ -16,7 +16,7 @@
     "cal-parser": "^1.0.2",
     "classnames": "^2.5.1",
     "compare-versions": "^6.1.1",
-    "dockerode": "^4.0.4",
+    "dockerode": "^4.0.10",
     "follow-redirects": "^1.15.9",
     "gamedig": "^5.2.0",
     "i18next": "^21.10.0",
